@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './Home';
-import Actors from './Actors';
+import People from './People/PeopleContainer';
 import Cars from './Cars';
 import Header from './Header';
 
@@ -15,7 +15,7 @@ export default function RouterApp() {
                         <Link to='/'>Home</Link>
                     </li>
                     <li>
-                        <Link to='/actors'>Actors</Link>
+                        <Link to='/people'>People</Link>
                     </li>
                     <li>
                         <Link to='/cars'>Cars</Link>
@@ -23,11 +23,11 @@ export default function RouterApp() {
                 </ul>
             </Header>   
             <Route exact path='/' component={Home} />
-            <Route path='/actors' component={Actors} />
-            <Route path='/actor/:id' component={Home} />
+            <Route path='/people' component={People} />
+            <Route path='/person/:id' component={Home} />
             <Route path='/cars' component={Cars} />
             <Route path='/cars/:id' component={Home} />
-            <Route path='/car-actor' component={Home} />
+            <Route path='/car-person' component={Home} />
         </div>
     </Router>
   );

@@ -2,16 +2,16 @@ import Api from './Api';
 
 /**
  * @export
- * @class ActorsService
+ * @class PeopleService
  */
-export default class ActorsService {
+export default class PeopleService {
     /**
-     * get list of actors
+     * get list of People
      *
      * @readonly
-     * @memberof ActorsService
+     * @memberof PeopleService
      */
-    get getActors () {
+    get getPeople () {
         this.getList = Api.get('people/');
 
         return this.getList
