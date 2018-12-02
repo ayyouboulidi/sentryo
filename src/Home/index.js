@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
 
-class App extends Component {
+export default class Home extends Component {
   goTo = (link) => this.props.history.push(link)
 
   render() {
@@ -18,5 +18,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

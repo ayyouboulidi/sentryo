@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './Home';
+import Actors from './Actors';
+import Cars from './Cars';
 import Header from './Header';
 
 export default function RouterApp() {
@@ -21,9 +23,9 @@ export default function RouterApp() {
                 </ul>
             </Header>   
             <Route exact path='/' component={Home} />
-            <Route path='/actors' component={Home} />
+            <Route path='/actors' component={Actors} />
             <Route path='/actor/:id' component={Home} />
-            <Route path='/cars' component={Home} />
+            <Route path='/cars' component={Cars} />
             <Route path='/cars/:id' component={Home} />
             <Route path='/car-actor' component={Home} />
         </div>
