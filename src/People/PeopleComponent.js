@@ -5,7 +5,7 @@ import './People.css';
 export default class People extends Component {
     render() {
         const { results } = this.props.people || {};
-        
+
         return (
             <div>
                 <div className="pageTitle">List of people</div>
@@ -14,7 +14,7 @@ export default class People extends Component {
                         <Table.Row>
                             <Table.HeaderCell>Name</Table.HeaderCell>
                             <Table.HeaderCell>Birth year</Table.HeaderCell>
-                            <Table.HeaderCell>Url</Table.HeaderCell>
+                            <Table.HeaderCell>Details</Table.HeaderCell>
                             <Table.HeaderCell>Vehicles</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
@@ -60,10 +60,6 @@ export default class People extends Component {
                                 <Menu.Item onClick={() => this.props.goPrevious()} icon>
                                     <Icon name='chevron left' />
                                 </Menu.Item>
-                                <Menu.Item as='a'>1 (TBD)</Menu.Item>
-                                <Menu.Item as='a'>2 (TBD)</Menu.Item>
-                                <Menu.Item as='a'>3 (TBD)</Menu.Item>
-                                <Menu.Item as='a'>... (TBD)</Menu.Item>
                                 <Menu.Item onClick={() => this.props.goNext()} icon>
                                     <Icon name='chevron right' />
                                 </Menu.Item>

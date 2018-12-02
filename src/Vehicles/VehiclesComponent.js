@@ -60,10 +60,6 @@ export default class Vehicles extends Component {
                                 <Menu.Item onClick={() => this.props.goPrevious()} icon>
                                     <Icon name='chevron left' />
                                 </Menu.Item>
-                                <Menu.Item as='a'>1 (TBD)</Menu.Item>
-                                <Menu.Item as='a'>2 (TBD)</Menu.Item>
-                                <Menu.Item as='a'>3 (TBD)</Menu.Item>
-                                <Menu.Item as='a'>... (TBD)</Menu.Item>
                                 <Menu.Item onClick={() => this.props.goNext()} icon>
                                     <Icon name='chevron right' />
                                 </Menu.Item>
