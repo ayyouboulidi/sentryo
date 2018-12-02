@@ -19,7 +19,6 @@ export default function RouterApp() {
                 <Route path='/personDetails' component={PersonViewer} />
                 <Route path='/vehicles' component={Vehicles} />
                 <Route path='/vehicleDetails' component={VehicleViewer} />
-                <Route path='/vehicule-person' component={Home} />
             </div> 
         </div>
     </Router>
