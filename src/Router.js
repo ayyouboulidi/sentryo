@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Home from './Home';
 import People from './People/PeopleContainer';
-import Cars from './Cars';
+import Vehicles from './Vehicles/VehiclesContainer';
 
 export default function RouterApp() {
   return (
@@ -15,9 +15,9 @@ export default function RouterApp() {
                 <Route exact path='/' component={Home} />
                 <Route path='/people' component={People} />
                 <Route path='/person/:id' component={Home} />
-                <Route path='/cars' component={Cars} />
-                <Route path='/cars/:id' component={Home} />
-                <Route path='/car-person' component={Home} />
+                <Route path='/vehicles' component={Vehicles} />
+                <Route path='/vehicles/:id' component={Home} />
+                <Route path='/vehicule-person' component={Home} />
             </div> 
         </div>
     </Router>
@@ -38,9 +38,9 @@ const Header = () => (
                 as={() => <HeaderItem to="/people" label="People"/>}
             />
             <Menu.Item
-                name='Cars'
+                name='Vehicles'
                 link
-                as={() => <HeaderItem to="/cars" label="Cars"/>}
+                as={() => <HeaderItem to="/vehicles" label="Vehicles"/>}
             />
         </Menu>
     </header>  

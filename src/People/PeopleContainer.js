@@ -12,10 +12,10 @@ export default class People extends Component {
             people: {}
         }
 
-        this.getListOfPeope();
+        this.getListOfPeople();
     }
 
-    getListOfPeope() {
+    getListOfPeople() {
         peopleService
             .getPeople
             .then(people => this.setState({ people }));

@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { Icon, Label, Menu, Table } from 'semantic-ui-react'
-import './People.css';
+import './Vehicles.css';
 
-export default class People extends Component {
+export default class Vehicles extends Component {
     render() {
-        const { results } = this.props.people || {};
+        const { results } = this.props.vehicles || {};
+        console.log(this.props.vehicles);
 
         return (
             <div>
-                <div className="pageTitle">List of people</div>
+                <div className="pageTitle">List of vehicles</div>
                 <Table celled>
                     <Table.Header>
                         <Table.Row>
                             <Table.HeaderCell>Name</Table.HeaderCell>
-                            <Table.HeaderCell>Birth year</Table.HeaderCell>
-                            <Table.HeaderCell>Gender</Table.HeaderCell>
+                            <Table.HeaderCell>Model</Table.HeaderCell>
+                            <Table.HeaderCell>Manufacturer</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
 
@@ -25,8 +26,8 @@ export default class People extends Component {
                                     <Table.Cell>
                                         <Label ribbon>{row.name}</Label>
                                     </Table.Cell>
-                                    <Table.Cell>{row.birth_year}</Table.Cell>
-                                    <Table.Cell>{row.gender}</Table.Cell>
+                                    <Table.Cell>{row.model}</Table.Cell>
+                                    <Table.Cell>{row.manufacturer}</Table.Cell>
                                 </Table.Row>
                             ))
                         }
