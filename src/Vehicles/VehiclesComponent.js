@@ -15,6 +15,7 @@ export default class Vehicles extends Component {
                             <Table.HeaderCell>Name</Table.HeaderCell>
                             <Table.HeaderCell>Model</Table.HeaderCell>
                             <Table.HeaderCell>Details</Table.HeaderCell>
+                            <Table.HeaderCell>Drivers</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
 
@@ -34,6 +35,19 @@ export default class Vehicles extends Component {
                                             Details 
                                         </div>
                                     </Table.Cell>
+                                    <Table.Cell>
+                                        {
+                                            row.pilots.map((pilotUrl, index) =>
+                                                <div 
+                                                    key={pilotUrl}
+                                                    className="link"
+                                                    onClick={() => this.props.history.push("personDetails", { url: pilotUrl })}
+                                                > 
+                                                    Driver {index} Details
+                                                </div>
+                                            )
+                                        }
+                                    </Table.Cell>
                                 </Table.Row>
                             ))
                         }
@@ -41,7 +55,7 @@ export default class Vehicles extends Component {
 
                     <Table.Footer>
                         <Table.Row>
-                            <Table.HeaderCell colSpan='3'>
+                            <Table.HeaderCell colSpan='4'>
                             <Menu floated='right' pagination>
                                 <Menu.Item onClick={() => this.props.goPrevious()} icon>
                                     <Icon name='chevron left' />

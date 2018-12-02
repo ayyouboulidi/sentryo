@@ -5,7 +5,7 @@ import './People.css';
 export default class People extends Component {
     render() {
         const { results } = this.props.people || {};
-
+        
         return (
             <div>
                 <div className="pageTitle">List of people</div>
@@ -15,6 +15,7 @@ export default class People extends Component {
                             <Table.HeaderCell>Name</Table.HeaderCell>
                             <Table.HeaderCell>Birth year</Table.HeaderCell>
                             <Table.HeaderCell>Url</Table.HeaderCell>
+                            <Table.HeaderCell>Vehicles</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
 
@@ -34,6 +35,19 @@ export default class People extends Component {
                                             Details 
                                         </div>
                                     </Table.Cell>
+                                    <Table.Cell>
+                                        {
+                                            row.vehicles.map((vehicleUrl, index) =>
+                                                <div 
+                                                    key={vehicleUrl}
+                                                    className="link"
+                                                    onClick={() => this.props.history.push("vehicleDetails", { url: vehicleUrl })}
+                                                > 
+                                                    Vehicle {index} Details
+                                                </div>
+                                            )
+                                        }
+                                    </Table.Cell>
                                 </Table.Row>
                             ))
                         }
@@ -41,7 +55,7 @@ export default class People extends Component {
 
                     <Table.Footer>
                         <Table.Row>
-                            <Table.HeaderCell colSpan='3'>
+                            <Table.HeaderCell colSpan='4'>
                             <Menu floated='right' pagination>
                                 <Menu.Item onClick={() => this.props.goPrevious()} icon>
                                     <Icon name='chevron left' />
