@@ -8,18 +8,22 @@ export default class People extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            people: {}
+        }
+
         this.getListOfPeope();
     }
 
     getListOfPeope() {
         peopleService
             .getPeople
-            .then(people => console.log("...", people));
+            .then(people => this.setState({ people }));
     }
    
   render() {
     return (
-        <PeopleComponent />
+        <PeopleComponent people={this.state.people}/>
     );
   }
 }
