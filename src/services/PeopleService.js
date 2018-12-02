@@ -34,4 +34,16 @@ export default class PeopleService {
                 console.error(error)
             });
     }
+
+    getPerson (linkToPerson) {
+        this.person = Api.getWithCustomUrl(linkToPerson);
+
+        return this.person
+            .then(response => {
+                return JSON.parse(response.text);
+            })
+            .catch(error => {
+                console.error(error)
+            });
+    }
 }

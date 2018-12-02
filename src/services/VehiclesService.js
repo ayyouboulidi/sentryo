@@ -34,4 +34,16 @@ export default class VehiclesService {
                 console.error(error)
             });
     }
+
+    getVehicle (linkToVehicle) {
+        this.vehicle = Api.getWithCustomUrl(linkToVehicle);
+
+        return this.vehicle
+            .then(response => {
+                return JSON.parse(response.text);
+            })
+            .catch(error => {
+                console.error(error)
+            });
+    }
 }

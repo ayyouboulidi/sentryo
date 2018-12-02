@@ -14,7 +14,7 @@ export default class People extends Component {
                         <Table.Row>
                             <Table.HeaderCell>Name</Table.HeaderCell>
                             <Table.HeaderCell>Birth year</Table.HeaderCell>
-                            <Table.HeaderCell>Gender</Table.HeaderCell>
+                            <Table.HeaderCell>Url</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
 
@@ -26,7 +26,14 @@ export default class People extends Component {
                                         <Label ribbon>{row.name}</Label>
                                     </Table.Cell>
                                     <Table.Cell>{row.birth_year}</Table.Cell>
-                                    <Table.Cell>{row.gender}</Table.Cell>
+                                    <Table.Cell>
+                                        <div 
+                                            className="link"
+                                            onClick={() => this.props.history.push("personDetails", { url: row.url })}
+                                        > 
+                                            Details 
+                                        </div>
+                                    </Table.Cell>
                                 </Table.Row>
                             ))
                         }

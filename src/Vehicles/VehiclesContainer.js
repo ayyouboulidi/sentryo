@@ -48,6 +48,7 @@ export default class Vehicles extends Component {
     render() {
         return (
             <VehiclesComponent 
+                {...this.props}
                 vehicles={this.state.vehicles} 
                 goPrevious={this.goPrevious}
                 goNext={this.goNext}

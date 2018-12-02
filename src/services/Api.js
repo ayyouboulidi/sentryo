@@ -64,6 +64,22 @@ export default class Api {
     }
 
     /**
+     * Send GET http request
+     *
+     * @static
+     * @param {string} url
+     * @param {Object} [headers={}]
+     * @returns {Promise}
+     *
+     * @memberOf Api
+     */
+    static getWithCustomUrl (url, headers = {}) {
+        return request
+            .get(url)
+            .set(Api.headers(headers));
+    }
+
+    /**
      * Send POST http request
      *
      * @static

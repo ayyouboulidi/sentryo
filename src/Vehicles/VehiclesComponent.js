@@ -5,7 +5,6 @@ import './Vehicles.css';
 export default class Vehicles extends Component {
     render() {
         const { results } = this.props.vehicles || {};
-        console.log(this.props.vehicles);
 
         return (
             <div>
@@ -15,7 +14,7 @@ export default class Vehicles extends Component {
                         <Table.Row>
                             <Table.HeaderCell>Name</Table.HeaderCell>
                             <Table.HeaderCell>Model</Table.HeaderCell>
-                            <Table.HeaderCell>Manufacturer</Table.HeaderCell>
+                            <Table.HeaderCell>Details</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
 
@@ -27,7 +26,14 @@ export default class Vehicles extends Component {
                                         <Label ribbon>{row.name}</Label>
                                     </Table.Cell>
                                     <Table.Cell>{row.model}</Table.Cell>
-                                    <Table.Cell>{row.manufacturer}</Table.Cell>
+                                    <Table.Cell>
+                                        <div 
+                                            className="link"
+                                            onClick={() => this.props.history.push("vehicleDetails", { url: row.url })}
+                                        > 
+                                            Details 
+                                        </div>
+                                    </Table.Cell>
                                 </Table.Row>
                             ))
                         }

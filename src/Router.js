@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import People from './People/PeopleContainer';
 import Vehicles from './Vehicles/VehiclesContainer';
+import PersonViewer from './PersonViewer/PersonViewerContainer';
+import VehicleViewer from './VehicleViewer/VehicleViewerContainer';
 
 export default function RouterApp() {
   return (
@@ -14,9 +16,9 @@ export default function RouterApp() {
             <div className="body">
                 <Route exact path='/' component={Home} />
                 <Route path='/people' component={People} />
-                <Route path='/person/:id' component={Home} />
+                <Route path='/personDetails' component={PersonViewer} />
                 <Route path='/vehicles' component={Vehicles} />
-                <Route path='/vehicles/:id' component={Home} />
+                <Route path='/vehicleDetails' component={VehicleViewer} />
                 <Route path='/vehicule-person' component={Home} />
             </div> 
         </div>

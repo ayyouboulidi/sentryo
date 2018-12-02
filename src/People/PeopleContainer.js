@@ -48,6 +48,7 @@ export default class People extends Component {
     render() {
         return (
             <PeopleComponent 
+                {...this.props}
                 people={this.state.people} 
                 goPrevious={this.goPrevious}
                 goNext={this.goNext}
