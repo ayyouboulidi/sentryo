@@ -22,4 +22,16 @@ export default class PeopleService {
                 console.error(error)
             });
     }
+
+    getPeopleOfPage (page) {
+        this.getList = Api.get(`people/?page=${page}`);
+
+        return this.getList
+            .then(response => {
+                return JSON.parse(response.text);
+            })
+            .catch(error => {
+                console.error(error)
+            });
+    }
 }

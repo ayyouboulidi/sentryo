@@ -20,10 +20,38 @@ export default class People extends Component {
             .getPeople
             .then(people => this.setState({ people }));
     }
+
+    goNext = () => {
+        const next = this.state.people.next;
+
+        if(next) {
+            const page = next.split("?page=")[1];
+
+            peopleService
+            .getPeopleOfPage(page)
+            .then(people => this.setState({ people }));
+        }
+    }
+
+    goPrevious = () => {
+        const previous = this.state.people.previous;
+
+        if(previous) {
+            const page = previous.split("?page=")[1];
+
+            peopleService
+            .getPeopleOfPage(page)
+            .then(people => this.setState({ people }));
+        }
+    }
    
-  render() {
-    return (
-        <PeopleComponent people={this.state.people}/>
-    );
-  }
+    render() {
+        return (
+            <PeopleComponent 
+                people={this.state.people} 
+                goPrevious={this.goPrevious}
+                goNext={this.goNext}
+            />
+        );
+    }
 }
